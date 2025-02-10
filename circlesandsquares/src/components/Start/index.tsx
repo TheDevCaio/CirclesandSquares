@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { StartButton, GameContainer, Location, Player } from "./style";
-import { Container } from "../Global";
 import React from "react";
+import { Container } from "../Global";
 
 const generateMaze = (rows: number, cols: number) => {
   const maze = Array.from({ length: rows }, () => Array(cols).fill(1));
