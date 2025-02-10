@@ -33,5 +33,27 @@ const generateMaze = (rows: number, cols: number) => {
 
 const Game = () => {
     const rows = 21, cols = 21;
+    const [maze, setMaze] = useState(() => generateMaze(rows, cols));
+    const [playerPos, setPlayerPos] = useState({ x: 1, y: 1 });
+    const [start, setStart] = useState(false);
+    const [gameOver, setGameOver] = useState(false);
+    const containerRef = useRef<HTMLDivElement | null>(null);
 
+    const victory = { x: cols - 2, y: rows - 2 };
+
+    const isValidMove = (x: number, y: number) => {
+      return maze[y] && maze[y][x] === 0;
+    };
+  
+    const checkIfSurrounded = (x: number, y: number): boolean => {
+      const directions = [
+        [0, -1],
+        [0, 1],  
+        [-1, 0],
+        [1, 0],  
+      ];
+      //every retorna true se estiverem preenchidas.
+      return directions.every(([dx, dy]) => maze[y + dy]?.[x + dx] === 1);
+    };
+    
 }
