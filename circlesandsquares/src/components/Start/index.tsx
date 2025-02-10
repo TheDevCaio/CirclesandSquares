@@ -70,7 +70,7 @@ const Game = () => {
           setMaze(newMaze);
         }
       };
-      
+
       useEffect(() => {
 
         let interval: NodeJS.Timeout | null = null;
@@ -85,5 +85,36 @@ const Game = () => {
           if (interval) clearInterval(interval);
         };
       }, [start, maze, gameOver]);
+
+      useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+          if (!start || gameOver) return;
+    
+          let newX = playerPos.x;
+          let newY = playerPos.y;
+    
+          if (e.key === "ArrowUp" && isValidMove(newX, newY - 1)) newY -= 1;
+          else if (e.key === "ArrowDown" && isValidMove(newX, newY + 1)) newY += 1;
+          else if (e.key === "ArrowLeft" && isValidMove(newX - 1, newY)) newX -= 1;
+          else if (e.key === "ArrowRight" && isValidMove(newX + 1, newY)) newX += 1;
+    
+          setPlayerPos({ x: newX, y: newY });
+    
+          if (checkIfSurrounded(newX, newY)) {
+            window.location.reload(); 
+          }
+        };
+    
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+      }, [start, maze, playerPos, gameOver]);
+    
+      const startGame = () => {
+        setStart(true);
+        setGameOver(false);
+        if (containerRef.current) {
+          containerRef.current.requestPointerLock();
+        }
+      };
 
 }
