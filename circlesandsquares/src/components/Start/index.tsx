@@ -117,4 +117,13 @@ const Game = () => {
         }
       };
 
+      useEffect(() => {
+        if (start && playerPos.x === victory.x && playerPos.y === victory.y) {
+          setGameOver(true);
+          setStart(false);
+          document.exitPointerLock();
+          window.location.reload(); 
+        }
+      }, [playerPos, start, gameOver]);
+
 }
