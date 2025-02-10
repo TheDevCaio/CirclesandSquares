@@ -55,5 +55,20 @@ const Game = () => {
       //every retorna true se estiverem preenchidas.
       return directions.every(([dx, dy]) => maze[y + dy]?.[x + dx] === 1);
     };
+
+    const removeRandomObstacle = () => {
+        const randomX = Math.floor(Math.random() * cols);
+        const randomY = Math.floor(Math.random() * rows);
     
+        if (
+          maze[randomY][randomX] === 0 && 
+          randomX > 0 && randomX < cols - 1 && 
+          randomY > 0 && randomY < rows - 1 
+        ) {
+          const newMaze = [...maze];
+          newMaze[randomY][randomX] = 1; 
+          setMaze(newMaze);
+        }
+      };
+
 }
