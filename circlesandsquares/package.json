@@ -13,12 +13,11 @@
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.15"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
