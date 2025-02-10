@@ -70,5 +70,20 @@ const Game = () => {
           setMaze(newMaze);
         }
       };
+      
+      useEffect(() => {
+
+        let interval: NodeJS.Timeout | null = null;
+    
+        if (start && !gameOver) {
+          interval = setInterval(() => {
+            removeRandomObstacle();
+          }, 10); 
+        }
+    
+        return () => {
+          if (interval) clearInterval(interval);
+        };
+      }, [start, maze, gameOver]);
 
 }
