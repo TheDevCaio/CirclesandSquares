@@ -29,3 +29,9 @@ const generateMaze = (rows: number, cols: number) => {
 
   return maze;
 };
+
+
+const Game = () => {
+    const rows = 21, cols = 21;
+
+}
