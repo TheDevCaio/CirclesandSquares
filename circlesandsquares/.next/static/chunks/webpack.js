@@ -89,8 +89,6 @@
 /******/ 		};
 /******/ 	})();
 /******/ 	
-<<<<<<< HEAD
-=======
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -103,7 +101,6 @@
 /******/ 		};
 /******/ 	})();
 /******/ 	
->>>>>>> Home
 /******/ 	/* webpack/runtime/create fake namespace object */
 /******/ 	(() => {
 /******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
@@ -184,11 +181,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-<<<<<<< HEAD
-/******/ 		__webpack_require__.h = () => ("8ec097445423be6f")
-=======
 /******/ 		__webpack_require__.h = () => ("19c6e24cfea4f513")
->>>>>>> Home
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -1305,14 +1298,11 @@
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
 /******/ 	
-<<<<<<< HEAD
-=======
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
->>>>>>> Home
 /************************************************************************/
 /******/ 	
 /******/ 	// module cache are used so entry inlining is disabled
